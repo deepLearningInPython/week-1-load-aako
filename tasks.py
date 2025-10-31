@@ -4,33 +4,41 @@ import numpy
 # Write your code in between the dashed lines.
 # Don't import additional packages. Numpy suffices.
 
-# Task 1: 
+# Task 1:
 # Instructions:
-#Write a function that takes one numeric argument as input. 
-#If the number is larger than zero, the function should return 1, otherwise is should return -1.
-#The name of the function should be step
+# Write a function that takes one numeric argument as input.
+# If the number is larger than zero, the function should return 1, otherwise is should return -1.
+# The name of the function should be step
 
 # Your code here:
 # -----------------------------------------------
 
-def step
-
+def step(x):
+    if x > 0:
+        return 1
+    else:
+        return -1
 
 # -----------------------------------------------
 
 
 # Task 2:
 # Instructions:
-#Write a function that takes in two arguments: a numpy array, and an integer (call argument "cutoff" and set default to 0).
-#The function should return a numpy array of the same length, with all elements smaller than the cutoff being set to cutoff).
-#The name of the function should be ReLu
+# Write a function that takes in two arguments: a numpy array, and an integer (call argument "cutoff" and set default to 0).
+# The function should return a numpy array of the same length, with all elements smaller than the cutoff being set to cutoff).
+# The name of the function should be ReLu
 
 
 # Your code here:
 # -----------------------------------------------
-def ReLu
+#array = numpy.array([-1, 2, 3])
 
+def ReLu(x, cutoff=0):
+    # if element is less than cutoff, element = cutoff, otherwise remains same
+    x = numpy.where(x < cutoff, cutoff, x)
+    return x
 
+#print(ReLu(array))
 # -----------------------------------------------
 
 
@@ -44,7 +52,12 @@ def ReLu
 # Your code here:
 # -----------------------------------------------
 
-def neural_net_layer
+onedim = numpy.array([1, 2, 3])
+twodim = numpy.array([[1, 2, 3], [4, 5, 6]])
 
+def neural_net_layer(x, y):
+    return ReLu (numpy.matmul(x,y))
+
+neural_net_layer(twodim, onedim)
 
 # ------------------------------------------
